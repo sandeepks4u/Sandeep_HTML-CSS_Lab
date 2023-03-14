@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vertical Bar Graph with Animation</title>
+	<style>
+		body {
+			margin: 10px;
+			padding: 100px;
+		}
+		
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			height: 50vh;
+            
+		}
+		
+		.bar {
+			width: 50px;
+			height: 0;
+			margin: 0 10px;
+			background-color: rgb(51, 54, 52);
+			animation: bar-animation 2s ease-out forwards;
+			position: relative;
+		}
+		
+		.bar span {
+			position: absolute;
+			bottom: -20px;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 16px;
+			font-weight: bold;
+		}
+		
+		.bar:nth-child(1) {
+			animation-delay: 0.5s;
+		}
+		
+		.bar:nth-child(2) {
+			animation-delay: 1s;
+		}
+		
+		.bar:nth-child(3) {
+			animation-delay: 1.5s;
+		}
+		
+		@keyframes bar-animation {
+			from {
+				height: 0;
+			}
+			to {
+				height: var(--percentage);
+			}
+		}
+		
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Bar Plot</h1>
+	<div class="container">
+		<div class="bar" style="--percentage: 30%;">
+			<span>30%</span>
+		</div>
+		<div class="bar" style="--percentage: 40%;">
+			<span>40%</span>
+		</div>
+		<div class="bar" style="--percentage: 80%;">
+			<span>80%</span>
+		</div>
+	</div>
+    <H1>BAR CHART</H1>
+</body>
+</html>
